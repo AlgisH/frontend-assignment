@@ -1,0 +1,46 @@
+$color-primary: #394783;
+$color-primary-darker: #1f2b5a;
+
+$color-footer: #F3F3F3;
+
+$color-text: #505050;
+$color-text-light: #949494;
+$color-text-placeholder: #d9dce7;
+
+$color-border: #ced2e0;
+
+$color-menu-item-active: #344279;
+$color-menu-text: #5d699a;
+
+$color-error: #c71717;
+
+// BUTTONS
+$color-button: #5d699a;
+
+// GENERAL COLORS
+$color-white: #fff;
+$color-black: #fff;
+
+
+// LAYOUT ELEMENTS
+$height-topbar: 70px;
+$height-footer: 115px;
+$width-container: 1130px;
+$width-sidebar: 225px;
+$margin-sidebar: 25px;
+
+// FONTS
+$font-main: 'Roboto', 'Helvetica', 'sans-serif';
+
+// MIXINS
+@mixin boxshadow($color) {
+    -moz-box-shadow:    0px 0px 5px 1px lighten($color, 10%);
+    -webkit-box-shadow: 0px 0px 5px 1px lighten($color, 10%);
+    box-shadow:         0px 0px 5px 1px lighten($color, 10%);
+}
+@mixin layoutBlock() {
+    width: 100%;
+    padding: 0 1em;
+    max-width: $width-container;
+    margin: auto;
+}

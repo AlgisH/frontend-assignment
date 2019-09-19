@@ -114,7 +114,8 @@ module.exports = {
         to: 'assets/images'
       },
     ]),
-  ]
+  ],
+  
 };
 
 /* eslint-enable */
