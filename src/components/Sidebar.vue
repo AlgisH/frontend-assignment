@@ -38,6 +38,7 @@
         border: 1px solid $color-border;
         border-radius: 5px;
         margin-right: $margin-sidebar;
+        background-color: $color-white;
     
         .sidebar-menu-item {
             cursor: pointer;

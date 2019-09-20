@@ -32,9 +32,6 @@
                 return this.nameMap[this.currentRoute]
             }
         },
-        created() {
-            console.log(this.$route)
-        }
     }
 </script>
 

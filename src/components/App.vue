@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" :class="{'bg-dark': isBgDark}">
         <TopBar />
 
         <div id="main-wrapper">
@@ -31,7 +31,11 @@
             NavBar,
             Footer,
         },
-        created() {
+        computed: {
+            isBgDark() {
+                const darkBgPages = ['CompanyPage']
+                return darkBgPages.includes(this.$route.name) 
+            }
         }
     }
 </script>
@@ -41,7 +45,8 @@
 
     #main-wrapper {
         @include layoutBlock;
-        height: calc(100% - #{$height-topbar} - #{$height-footer});
+        min-height: calc(100% - #{$height-topbar} - #{$height-footer});
+        padding-bottom: 2em;
     }
     #container {
         display: flex;
@@ -49,5 +54,8 @@
     }
     #main-view {
         width: calc(100% - #{$width-sidebar} - #{$margin-sidebar} - 2em);
+    }
+    .bg-dark {
+        background-color: $color-background-dark;
     }
 </style>

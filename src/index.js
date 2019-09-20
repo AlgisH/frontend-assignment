@@ -6,6 +6,7 @@ import VeeValidate from 'vee-validate'
 import App from 'Components/App.vue'
 
 import router from './router'
+import store from './store'
 
 Vue.use(VeeValidate)
 
@@ -31,6 +32,7 @@ definitions.map(componentName => Vue.component(componentName, require(`Component
 
 new Vue({
   el: '#app',
-  router,
   render: createElement => createElement(App),
+  router,
+  store,
 });

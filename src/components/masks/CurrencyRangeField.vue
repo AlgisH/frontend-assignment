@@ -79,6 +79,7 @@
 // CHECK IF CORRECT RANGE
                 if (split.length !== 2) {
                     this.error = 'Invalid spend range.'
+                    this.$emit('input', '')
                     return
                 }
 
