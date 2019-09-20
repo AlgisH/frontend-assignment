@@ -6,7 +6,7 @@
             @blur="blur()" 
             @focus="focus()"
             type="text" 
-            :name="name" :id="name" :placeholder="placeholder" :disabled="disabled" />
+            :name="name" :id="id" :placeholder="placeholder" :disabled="disabled" />
         <div class="input-error-message">
             <div>{{ error }}</div>
         </div>
@@ -76,7 +76,7 @@
             formatRange() {
                 const split = this.value.toString().split(' - ').map(item => parseInt(item).toFixed(0) )
 
-// CHECK IF CORRECT RANGE
+                // CHECK IF CORRECT RANGE
                 if (split.length !== 2) {
                     this.error = 'Invalid spend range.'
                     this.$emit('input', '')

@@ -7,7 +7,7 @@
                 @keyup.enter="$emit('enter')" 
                 @blur="$emit('blur')" 
                 @focus="$emit('focus')"
-                v-validate="validate" :data-vv-as="validateAs" :type="type" :name="name" :id="name" :placeholder="placeholder" :disabled="disabled" />
+                v-validate="validate" :data-vv-as="validateAs" :type="type" :name="name" :id="id" :placeholder="placeholder" :disabled="disabled" />
 			<div class="input-error-message">
 				<div v-for="(error, index) in errors.collect(name)" :key="index">{{ error }}</div>
 			</div>
@@ -20,7 +20,7 @@
                 @keyup.enter="$emit('enter')" 
                 @blur="$emit('blur')" 
                 @focus="$emit('focus')"
-                v-validate="validate" :data-vv-as="validateAs" :type="type" :name="name" :id="name" :placeholder="placeholder" :disabled="disabled" />
+                v-validate="validate" :data-vv-as="validateAs" :type="type" :name="name" :id="id" :placeholder="placeholder" :disabled="disabled" />
 			<div class="input-error-message">
 				<div v-for="(error, index) in errors.collect(name)" :key="index">{{ error }}</div>
 			</div>
@@ -32,7 +32,7 @@
 			<textarea v-model="input" 
                 @blur="$emit('blur')" 
                 @focus="$emit('focus')"
-                v-validate="validate" :data-vv-as="validateAs" :name="name" :id="name" :placeholder="placeholder" :style="{'height': `${height}px`}" :disabled="disabled" />
+                v-validate="validate" :data-vv-as="validateAs" :name="name" :id="id" :placeholder="placeholder" :style="{'height': `${height}px`}" :disabled="disabled" />
 			<div class="input-error-message">
 				<div v-for="(error, index) in errors.collect(name)" :key="index">{{ error }}</div>
 			</div>

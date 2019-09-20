@@ -1,8 +1,8 @@
 <template>
     <div id="company-data">
         <p class="no-margin-top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius mi vel felis maximus, vel tempor sapien tincidunt. Vivamus quam enim</p>
-        
         <form @prevent.submit="" class="form">
+
             <Field class="half"
                 :value="name"
                 @input="SET_NAME"
@@ -56,8 +56,6 @@
                 :name="'notes'"
                 :height="150"
                 :placeholder="'e.g. Good Tech Company'"
-                :validate="'required'"
-                :validateAs="'Company name'"
             />
 
             <div @click="saveNotes()" slot="actions" class="button-save">Save</div>
@@ -84,18 +82,24 @@
         computed: {
             ...mapState('companyData', [
                 'name',
-                'spend', 
+                'spend',
                 'spendAvailable',
-                'notes'
-            ])  
+                'notes',
+            ]),
+            // ...mapState({
+            //     name: 'companyData/name',
+            //     spend: 'companyData/spend',
+            //     spendAvailable: 'companyData/spendAvailable',
+            //     notes: 'companyData/notes',
+            // })
         },
         methods: {
-            ...mapMutations('companyData', [
-                'SET_NAME',
-                'SET_SPEND',
-                'SET_SPEND_AVAILABLE',
-                'SET_NOTES',
-            ]),
+            ...mapMutations({
+                SET_NAME: 'companyData/SET_NAME',
+                SET_SPEND: 'companyData/SET_SPEND',
+                SET_SPEND_AVAILABLE: 'companyData/SET_SPEND_AVAILABLE',
+                SET_NOTES: 'companyData/SET_NOTES',
+            }),
             openModal() {
                 this.$refs.modalNotes.open()
             },

@@ -6,7 +6,7 @@
             @blur="blur()" 
             @focus="focus()"
             type="text" 
-            :name="name" :id="name" :placeholder="placeholder" :disabled="disabled" />
+            :name="name" :id="id" :placeholder="placeholder" :disabled="disabled" />
         <div class="input-error-message">
             <div>{{ error }}</div>
         </div>
@@ -45,8 +45,6 @@
                     // HIDE ERROR IF NUMERIC WARNING
                     if ((/^\d+$/).test(this.value))
                         this.error = ''
-console.log(this.value)
-console.log(this.value.toFixed(0))
                     return this.isDisplay
                         ? `${this.currency} ${this.value.toFixed(0).replace(/-?(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")}`
                         : this.value.toString()
